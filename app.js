@@ -4,6 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+// models
+require('./models/Posts');
+require('./models/Comments');
+
+// connect to the local MongoDB instance
+mongoose.connect('mongodb://localhost/marionews');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
